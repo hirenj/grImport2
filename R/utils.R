@@ -26,8 +26,8 @@ svgStyleToList <- function(styleAttr, defs) {
         return(list())
     attrs <- strsplit(styleAttr, ";")[[1]]
     attrs <- attrs[nzchar(attrs)]
-    attrs <- unlist(strsplit(attrs, " "))
-    splitAttrs <- strsplit(attrs[nzchar(attrs)], ":")
+    #attrs <- unlist(strsplit(attrs, " "))
+    splitAttrs <- sapply( strsplit(attrs[nzchar(attrs)], ":"), trimws, simplify=F )
     gparNames <- sapply(splitAttrs,
         function(x) {
             switch(x[1],
