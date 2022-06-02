@@ -93,7 +93,7 @@ parseLty <- function(x) {
     if (x == "none")
         1 # solid
     else
-        as.numeric(strsplit(x, ",")[[1]])
+        c(3,3) #as.numeric(strsplit(as.character(x), ",")[[1]])
 }
 
 # Pull out all of the gpar settings
